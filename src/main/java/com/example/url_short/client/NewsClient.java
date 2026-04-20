@@ -27,7 +27,7 @@ public class NewsClient {
 
         NewReponse newReponse = restTemplate.getForObject(baseUrl, NewReponse.class);
         if (newReponse == null || newReponse.new_results() == null) {
-            new RuntimeException("no se encontro api news");
+            throw new RuntimeException("No se encontró respuesta de la API de noticias");
         }
 
         return newReponse;
